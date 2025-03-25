@@ -1,0 +1,6 @@
+<lib-abx-side-menu
+  [titleColor]="TitleColor.purple"
+  [isAuthenticated]="isAuthenticated()"
+  (signIn)="isAuthenticated.set(true)"
+  (signOut)="isAuthenticated.set(false)"
+/>
