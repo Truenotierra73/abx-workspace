@@ -59,11 +59,35 @@ describe('AbxSideMenuComponent', () => {
 
     fixture.componentRef.setInput('titleColor', TitleColor.red);
     fixture.detectChanges();
-    const spanEl: HTMLSpanElement | null = compiled.querySelector(
-      'span[data-company-name]',
-    );
+    const spanEl: HTMLSpanElement | null =
+      compiled.querySelector('span[data-title]');
 
     expect(spanEl).toBeTruthy();
     expect(spanEl!.classList.value).toContain(TitleColor.red);
+  });
+
+  it('should change title text', () => {
+    expect(component.title()).toBe('APX');
+
+    fixture.componentRef.setInput('title', 'ABX');
+    fixture.detectChanges();
+    const spanEl: HTMLSpanElement | null =
+      compiled.querySelector('span[data-title]');
+
+    expect(spanEl).toBeTruthy();
+    expect(spanEl!.innerText).toBe('ABX');
+  });
+
+  it('should change subtitle text', () => {
+    expect(component.subtitle()).toBe('Corp');
+
+    fixture.componentRef.setInput('subtitle', 'Company');
+    fixture.detectChanges();
+    const spanEl: HTMLSpanElement | null = compiled.querySelector(
+      'span[data-subtitle]',
+    );
+
+    expect(spanEl).toBeTruthy();
+    expect(spanEl!.innerText).toBe('Company');
   });
 });

@@ -6,8 +6,8 @@
       <h6
         class="text-2xl block antialiased tracking-normal font-sans font-bold leading-relaxed text-white"
       >
-        <span [classList]="[titleColor()]" data-company-name>APX</span>
-        <span class="font-thin">Corp</span>
+        <span [classList]="[titleColor()]" data-title>{{ title() }}</span>
+        <span class="font-thin" data-subtitle>{{ subtitle() }}</span>
       </h6>
     </a>
     <button
@@ -41,7 +41,9 @@
         <a
           routerLink="/"
           routerLinkActive="rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full flex items-center gap-4 px-4 capitalize"
-          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLinkActiveOptions]="{
+            exact: true,
+          }"
           aria-current="page"
         >
           <button
@@ -101,7 +103,9 @@
         <a
           routerLink="/projects"
           routerLinkActive="rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full flex items-center gap-4 px-4 capitalize"
-          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLinkActiveOptions]="{
+            exact: true,
+          }"
         >
           <button
             class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"

@@ -27,4 +27,6 @@ export class AbxSideMenuComponent {
   signOut: OutputEmitterRef<void> = output<void>();
   signIn: OutputEmitterRef<void> = output<void>();
   titleColor: InputSignal<TitleColor> = input<TitleColor>(TitleColor.blue);
+  title: InputSignal<string> = input<string>('APX');
+  subtitle: InputSignal<string> = input<string>('Corp');
 }
